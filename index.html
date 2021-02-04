@@ -117,6 +117,43 @@
           </p>
       </div>
     </div>
+      
+      
+      
+      
+      <div class="col-lg-8 mx-auto" style="left: -10px;top: 5px;">
+    <h4>Camera localisation for Augmented Reality at live sports events</h4>
+    </div>
+    <div class="row">
+    <div class="col-lg-4 mx-auto" style="left: 95px;"><p class="lead">
+      The aim of this project was to create a method of camera localisation for use at live rugby matches,
+      allowing users to quickly and easily initiate an augmented reality experience. An emphasis was put on the ease of use of my
+      method, as I wanted inexperienced users to be able to perform the localisation without a complicated intialisation process.</p>
+    </div>            
+    <div class="col-lg-4 mx-auto" style="left: -120px;top: 10px;">
+    <div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/0WiskPTmUQg" allowfullscreen=""></iframe>
+    </div>
+    </div>
+      <div class="col-lg-8 mx-auto">
+        <p class="lead">
+        <!--The localisation pipeline (written in C++ using OpenCV) is split into multiple steps. First a pitch segmentation step removes the area
+          surrounding the rugby pitch and segments the pitch markings from the surrounding grass. A basic Hough transform line detector is applied to
+          the segmented image and our line clustering step discards outliers and combines detected line segments, idealy resulting in one line per real world pitch marking.
+          A set of correspondences is then found between the detected lines and the corresponding pitch markings on a simple 2D model of the pitch. These correspondences then
+          allow us to calculate the camera pose.-->
+          The localisation pipeline was written in C++ using OpenCV, then integrated into a Unity AR prototype for iOS that uses Vuforia and ARkit to provide
+          basic AR tracking functionality. To initialise our localisation process we task the user with touching a certain pitch marking on their camera feed
+          (either the leftmost, center, or rightmost pitch lines). This gives us a single line correspondence between the input image frame and a basic 2D model of the pitch.
+          This correspondence gives us enough infomation to succesfully generate a set of correspondences between each pitch line in the image and the lines on the model,
+          this mapping between the image and the model is then used to determine the camera pose relative to the pitch.
+          
+        </p>
+      </div>
+    </div>
+      
+      
+      
   </div>
   </section>
   
