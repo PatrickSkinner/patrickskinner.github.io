@@ -127,8 +127,8 @@
     <div class="row">
     <div class="col-lg-4 mx-auto" style="left: 95px;"><p class="lead">
       The aim of this project was to create a method of camera localisation for use at live rugby matches,
-      allowing users to quickly and easily initiate an augmented reality experience. An emphasis was put on the ease of use of my
-      method, as I wanted inexperienced users to be able to perform the localisation without a complicated intialisation process.</p>
+      allowing users to quickly and easily initiate an augmented reality experience. An emphasis was put on ease of use,
+      as we wanted inexperienced users to be able to perform the localisation without a complicated intialisation process.</p>
     </div>            
     <div class="col-lg-4 mx-auto" style="left: -120px;top: 10px;">
     <div class="embed-responsive embed-responsive-16by9">
@@ -144,9 +144,8 @@
           allow us to calculate the camera pose.-->
           The localisation pipeline was written in C++ using OpenCV, then integrated into a Unity AR prototype for iOS that uses Vuforia and ARkit to provide
           basic AR tracking functionality. To initialise our localisation process we task the user with touching a certain pitch marking on their camera feed
-          (either the leftmost, center, or rightmost pitch lines). This gives us a single line correspondence between the input image frame and a basic 2D model of the pitch.
-          This correspondence gives us enough infomation to succesfully generate a set of correspondences between each pitch line in the image and the lines on the model,
-          this mapping between the image and the model is then used to determine the camera pose relative to the pitch.
+          , from this point we can generate a set of correspondences between each line in the image and the corresponding pitch line on a simple model of the field.
+          This gives use a spatial mapping between the pitch and the image that can be used to estimate the camera pose.
           
         </p>
       </div>
