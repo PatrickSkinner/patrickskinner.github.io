@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Patrick Skinner</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/scrolling-nav.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Patrick Skinner</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#recentworks">My Work</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-primary text-white">
+    <div class="container text-center">
+      <h1>Patrick Skinner</h1>
+      <p class="lead">Masters student at the University of Otago, studying computer science with a focus on computer vision and augmented reality.</p>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>About me</h2>
+          <p class="lead">I have recently completed a MSc in Computer Science, and I am now seeking employment as a developer in the AR/VR or computer vision fields. 
+            </p>
+          <p class="lead">
+            My first experience with augmented reality development was the project I undertook for my postgraduate diploma. This project involved designing an indirect
+            augmented reality browser for pedestrian navigation and sightseeing. This application combined crowd sourced precaptured street level imagery with geospatial data
+            to annotate buildings and landmarks in the users' environment.
+          </p>
+          <p class="lead">
+            For my masters project I investigated the vision and localisation side of AR. I designed a localisation method to be integrated into an AR application for
+            live spectators at rugby games. This project involved designing a localisation pipeline using OpenCV, and the integration of this pipeline into an iOS application
+            built using Unity and Vuforia.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="Interests" class="bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>My Areas of Interest</h2>
+          <p class="lead"></p>
+          <ul>
+            <li>Augmented and Virtual Reality</li>
+            <li>Computer vision (Localisation and Scene Reconstruction)</li>
+            <li>Game Development</li>
+            <li>Interaction and Experience Design</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="recentworks">
+    <div class="container">
+    <div class="col-lg-8 mx-auto" style="left: -10px;">
+    <h2>Recent Works</h2>
+    </div>
+
+    <div style="left: -10px;top: 5px;" class="col-md-8 mx-auto">
+    <h4>Indirect Augmented Reality Browser</h4>
+    </div>
+    <div class="row">
+    <div class="col-md-4 ml-auto mr-1" style="left: 5px;"><p class="lead">
+      The Indirect Augmented Reality Browser is a Three.js based application that is designed for
+      navigation and sightseeing. This application combines 360 degree images sourced from street view imaging platform Mapillary with 
+      GIS map data sourced from OpenStreetMap.</p>
+    </div>            
+    <div style="" class="col-md-4 mr-auto ml-1">
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/0WiskPTmUQg" allowfullscreen=""></iframe>
+    </div>
+    </div>
+      <div class="col-md-8 mx-auto">
+        <p class="lead">
+          Building outlines taken from OpenStreetMap are used to create a rough 3D approximation of the surrounding environment.
+          This 3D appoximation is used to align text labels with the faces of the surrounding buildings, accounting for possible occlusion by 
+          other buildings and ensuring their is a clear spatial relationship between the label and the corresponding structure.
+          </p>
+      </div>
+    </div>
+      
+      
+      
+      
+      <div class="col-lg-8 mx-auto" style="left: -10px;top: 5px;">
+    <h4>Camera localisation for Augmented Reality at live sports events</h4>
+    </div>
+    <div class="row">
+    <div class="col-md-4 ml-auto mr-1" style="left: 5px;"><p class="lead">
+      The aim of this project was to create a method of camera localisation for use at live rugby matches,
+      allowing users to quickly and easily initiate an augmented reality experience. Alongside our pipeline we also developed
+      a proof of concept iOS app to test our localisation on a tabletop pitch model.</p>
+    </div>            
+    <div class="col-lg-4 mr-auto ml-1" style="">
+    <div class="" style="margin-top: 10px;">
+    <img src="TemplateWarped2.jpg" alt="" width="350" height="196"> 
+    </div>
+    </div>
+      <div class="col-lg-8 mx-auto">
+        <p class="lead">
+        <!--The localisation pipeline (written in C++ using OpenCV) is split into multiple steps. First a pitch segmentation step removes the area
+          surrounding the rugby pitch and segments the pitch markings from the surrounding grass. A basic Hough transform line detector is applied to
+          the segmented image and our line clustering step discards outliers and combines detected line segments, idealy resulting in one line per real world pitch marking.
+          A set of correspondences is then found between the detected lines and the corresponding pitch markings on a simple 2D model of the pitch. These correspondences then
+          allow us to calculate the camera pose.-->
+          The localisation pipeline was written in C++ using OpenCV, then integrated into a Unity AR prototype for iOS that uses Vuforia and ARkit to provide
+          basic AR tracking functionality. To initialise our localisation process we task the user with touching a certain pitch marking on their camera feed
+          , from this point we can generate a set of correspondences between each line in the image and the corresponding pitch line on a simple model of the field.
+          This gives use a spatial mapping between the pitch and the image that can be used to estimate the camera pose.
+          
+        </p>
+      </div>
+    </div>
+      
+      
+      
+  </div>
+  </section>
+  
+  
+  <section id="publications">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Publications</h2>
+          <p class="lead">
+          P. Skinner and S. Zollmann, "Localisation for Augmented Reality at Sport Events," 2019 International Conference on Image and Vision Computing New Zealand (IVCNZ), Dunedin, New Zealand, 2019 (Poster)
+           </p> <p class="lead">
+          P. Skinner, J. Ventura and S. Zollmann, "Indirect Augmented Reality Browser for GIS Data," 2018 IEEE International Symposium on Mixed and Augmented Reality Adjunct (ISMAR-Adjunct), Munich, Germany, 2018 (Poster)
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Contact Me</h2>
+          <p class="lead">The best way to contact me directly is at patrickskinner@outlook.com.<br/>
+            Further examples of my work can be found on my <a href="https://github.com/PatrickSkinner">Github profile</a>.
+
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Patrick Skinner 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom JavaScript for this theme -->
+  <script src="js/scrolling-nav.js"></script>
+
+</body>
+
+</html>
