@@ -12,6 +12,9 @@
 
   <!-- Custom styles for this template -->
   <link href="css/scrolling-nav.css" rel="stylesheet">
+  <style type="text/css">
+          #theCanvas{background-color:#000;z-index:-1;position: absolute;
+  </style>
 
 </head>
 
@@ -40,7 +43,8 @@
     </div>
   </nav>
 
-  <header class="bg-primary text-white">
+  <header id="parent" class="bg-primary text-white">
+    <canvas id="theCanvas" width="1" height="1"></canvas>
     <div class="container text-center">
       <h1>Patrick Skinner</h1>
       <p class="lead">Masters student at the University of Otago, studying computer science with a focus on computer vision and augmented reality.</p>
@@ -228,6 +232,12 @@
   <!-- Custom JavaScript for this theme -->
   <script src="js/scrolling-nav.js"></script>
 
+  <script>
+    var canvas = document.getElementById("theCanvas");
+    var parent = document.getElementById("parent");
+    canvas.width = parent.offsetWidth;
+    canvas.height = parent.offsetHeight;
+  </script>
 
 
 
