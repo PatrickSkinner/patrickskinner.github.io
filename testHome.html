@@ -14,7 +14,7 @@
   <link href="css/scrolling-nav.css" rel="stylesheet">
   
   <style type="text/css">
-    #theCanvas{background-color:#000;z-index:-1;position: absolute; margin: -156px;}
+    #theCanvas{background-color:#000;z-index:-1;position: absolute; margin: -156px; margin-left: 0px;}
     #parent{position: relative;}
   </style>
 </head>
@@ -240,6 +240,94 @@
     canvas.height = parent.offsetHeight;
   </script>
 
+  <script>
+        const canvas = document.querySelector('theCanvas');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera( 25, window.innerWidth / window.innerHeight, 0.1, 1000 );
+
+        const renderer = new THREE.WebGLRenderer({canvas});
+        renderer.setClearColor( 0x007bff, 1);
+        camera.position.z = 5;
+
+        const opacity = 0.3;
+
+        const star1 = drawStar(30,0,-50);
+        const star2 = drawStar(-80, -15, -100);
+        const star3 = drawStar(-40, 20, -150);
+
+        function drawStar(x, y, z){
+          const pivot = new THREE.Group();
+
+          pivot.position.set(x, y, z);
+
+          for(var i = 0; i < 8; i++){
+            const geometry = new THREE.CylinderGeometry( 5, 5, 25, 6);
+            const wireframe = new THREE.EdgesGeometry(geometry);
+            const lineMaterial = new THREE.LineBasicMaterial( { color: 0xffffff } );
+            lineMaterial.transparent = true;
+            lineMaterial.opacity = opacity;
+            const line = new THREE.LineSegments( wireframe, lineMaterial );
+            const obj = new THREE.Object3D();
+            obj.add(line);
+            obj.rotation.set(0,0, (i+2)*(Math.PI/4));
+
+            const theta = i*(Math.PI/4);
+            const dist = 25;
+            obj.position.set(dist*Math.cos(theta), dist*Math.sin(theta),0);
+
+            pivot.add(obj);
+          }
+
+          scene.add(pivot);
+
+          return pivot;
+        }
+
+        function resizeRendererToDisplaySize(renderer) {
+          const canvas = renderer.domElement;
+          const width = canvas.clientWidth;
+          const height = canvas.clientHeight;
+          const needResize = canvas.width !== width || canvas.height !== height;
+          if (needResize) {
+            renderer.setSize(width, height, false);
+          }
+          return needResize;
+        } 
+
+        function render(time) {
+          time *= 0.001;
+
+          if (resizeRendererToDisplaySize(renderer)) {
+            const canvas = renderer.domElement;
+            camera.aspect = canvas.clientWidth / canvas.clientHeight;
+            camera.updateProjectionMatrix();
+          }
+
+          star1.rotation.z += 0.003;
+          star1.rotation.x += 0.001;
+          star1.children.forEach(function(pChild) {
+            pChild.rotateY(0.003);
+          });
+
+          star2.rotation.z += 0.003;
+          star2.rotation.x -= 0.002;
+          star2.children.forEach(function(pChild) {
+            pChild.rotateY(0.003);
+          });
+
+          star3.rotation.z -= 0.003;
+          star3.rotation.x += 0.002;
+          star3.children.forEach(function(pChild) {
+            pChild.rotateY(0.003);
+          });
+
+
+          requestAnimationFrame( render );
+          renderer.render( scene, camera );
+        }
+
+        requestAnimationFrame( render );
+    </script>
 
 
 </body></html>
