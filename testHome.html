@@ -234,14 +234,11 @@
   <script src="js/scrolling-nav.js"></script>
 
   <script>
-    var canvas = document.getElementById("theCanvas");
-    var parent = document.getElementById("parent");
-    canvas.width = parent.offsetWidth;
-    canvas.height = parent.offsetHeight;
-  </script>
+        var canvas = document.getElementById("theCanvas");
+        var parent = document.getElementById("parent");
+        canvas.width = parent.offsetWidth;
+        canvas.height = parent.offsetHeight;
 
-  <script>
-        const canvas = document.querySelector('theCanvas');
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera( 25, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
