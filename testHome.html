@@ -1,9 +1,11 @@
 <html lang="en"><head>
 
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="user-scalable=no, width=device-width,
+      initial-scale=0.5, minimum-scale=0.5, maximum-scale=0.5" />
   <meta name="description" content="">
   <meta name="author" content="">
+  
 
   <title>Patrick Skinner</title>
 
@@ -242,13 +244,13 @@
         canvas.height = parent.offsetHeight;
 
         const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera( 25, window.innerWidth / window.innerHeight, 0.1, 1000 );
+        const camera = new THREE.PerspectiveCamera( 25, canvas.width / canvas.height, 0.1, 1000 );
 
         const renderer = new THREE.WebGLRenderer({canvas});
         renderer.setClearColor( 0x007bff, 1);
         camera.position.z = 5;
 
-        const opacity = 0.3;
+        const opacity = 0.2;
 
         const star1 = drawStar(30,0,-50);
         const star2 = drawStar(-80, -15, -100);
@@ -283,9 +285,15 @@
         }
 
         function resizeRendererToDisplaySize(renderer) {
-          const canvas = renderer.domElement;
-          const width = canvas.clientWidth;
-          const height = canvas.clientHeight;
+          const canvasDom = renderer.domElement;
+          const width = canvasDom.clientWidth;
+          const height = canvasDom.clientHeight;
+
+          var canvas = document.getElementById("theCanvas");
+          var parent = document.getElementById("parent");
+          canvas.width = parent.offsetWidth;
+          canvas.height = parent.offsetHeight;
+          
           const needResize = canvas.width !== width || canvas.height !== height;
           if (needResize) {
             renderer.setSize(width, height, false);
@@ -297,9 +305,15 @@
           time *= 0.001;
 
           if (resizeRendererToDisplaySize(renderer)) {
-            const canvas = renderer.domElement;
-            camera.aspect = canvas.clientWidth / canvas.clientHeight;
+            var canvas = document.getElementById("theCanvas");
+            var parent = document.getElementById("parent");
+            canvas.width = parent.offsetWidth;
+            canvas.height = parent.offsetHeight;
+
+            renderer.setSize(parent.offsetWidth, parent.offsetHeight, false);
+            camera.aspect = parent.offsetWidth / parent.offsetHeight;
             camera.updateProjectionMatrix();
+            //console.log("Updating Camera to " +  parent.offsetWidth + " / " + parent.offsetHeight);
           }
 
           star1.rotation.z += 0.003;
