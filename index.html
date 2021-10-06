@@ -1,4 +1,6 @@
-<html lang="en"><head>
+<html lang="en">
+
+<head>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,8 +16,17 @@
   <link href="css/scrolling-nav.css" rel="stylesheet">
 
   <style type="text/css">
-    #theCanvas{background-color:#000;z-index:-1;position: absolute; margin: -156px; margin-left: 0px;}
-    #parent{position: relative;}
+    #theCanvas {
+      background-color: #000;
+      z-index: -1;
+      position: absolute;
+      margin: -156px;
+      margin-left: 0px;
+    }
+
+    #parent {
+      position: relative;
+    }
   </style>
 
 </head>
@@ -26,7 +37,8 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <div class="container">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">Patrick Skinner</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -49,7 +61,8 @@
     <canvas id="theCanvas" width="1" height="1"></canvas>
     <div class="container text-center">
       <h1>Patrick Skinner</h1>
-      <p class="lead">Masters graduate from the University of Otago. Software engineer with a focus on computer vision and augmented reality.</p>
+      <p class="lead">Masters graduate from the University of Otago. Software engineer with a focus on computer vision
+        and augmented reality.</p>
     </div>
   </header>
 
@@ -58,16 +71,21 @@
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <h2>About me</h2>
-          <p class="lead">I have recently completed a MSc in Computer Science, and I am now seeking employment as a developer in the AR/VR or computer vision fields. 
-            </p>
+          <p class="lead">I have recently completed a MSc in Computer Science, and I am now seeking employment as a
+            developer in the AR/VR or computer vision fields.
+          </p>
           <p class="lead">
-            My first experience with augmented reality development was the project I undertook for my postgraduate diploma. This project involved designing an indirect
-            augmented reality browser for pedestrian navigation and sightseeing. This application combined crowd sourced precaptured street level imagery with geospatial data
+            My first experience with augmented reality development was the project I undertook for my postgraduate
+            diploma. This project involved designing an indirect
+            augmented reality browser for pedestrian navigation and sightseeing. This application combined crowd sourced
+            precaptured street level imagery with geospatial data
             to annotate buildings and landmarks in the users' environment.
           </p>
           <p class="lead">
-            For my masters project I investigated the vision and localisation side of AR. I designed a localisation method to be integrated into an AR application for
-            live spectators at rugby games. This project involved designing a localisation pipeline using OpenCV, and the integration of this pipeline into an iOS application
+            For my masters project I investigated the vision and localisation side of AR. I designed a localisation
+            method to be integrated into an AR application for
+            live spectators at rugby games. This project involved designing a localisation pipeline using OpenCV, and
+            the integration of this pipeline into an iOS application
             built using Unity and Vuforia.
           </p>
         </div>
@@ -91,111 +109,144 @@
       </div>
     </div>
   </section>
-  
+
   <section id="recentworks">
     <div class="container">
-    <div class="col-lg-8 mx-auto" style="left: -10px;">
-    <h2>Recent Works</h2>
-    </div>
+      <div class="col-lg-8 mx-auto" style="left: -10px;">
+        <h2>Recent Works</h2>
+      </div>
 
-    <div style="left: -10px;top: 5px;" class="col-md-8 mx-auto">
-    <h4>Indirect Augmented Reality Browser</h4>
-    </div>
-    <div class="row">
-    <div class="col-md-4 ml-auto mr-1" style="left: 5px;"><p class="lead">
-      The Indirect Augmented Reality Browser is a Three.js based application that is designed for
-      navigation and sightseeing. This application combines 360 degree images sourced from street view imaging platform Mapillary with 
-      GIS map data sourced from OpenStreetMap.</p>
-    </div>            
-    <div style="" class="col-md-4 mr-auto ml-1">
-    <div class="embed-responsive embed-responsive-16by9">
-      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/0WiskPTmUQg" allowfullscreen=""></iframe>
-    </div>
-    </div>
-      <div class="col-md-8 mx-auto">
-        <p class="lead">
-          Building outlines taken from OpenStreetMap are used to create a rough 3D approximation of the surrounding environment.
-          This 3D appoximation is used to align text labels with the faces of the surrounding buildings, accounting for possible occlusion by 
-          other buildings and ensuring their is a clear spatial relationship between the label and the corresponding structure.
-          </p>
-      </div>
-    </div>
-      
-      
-      
-      
-    <div class="col-lg-8 mx-auto" style="left: -10px;top: 5px;">
-    <h4>Camera localisation for Augmented Reality at live sports events</h4>
-    </div>
-    <div class="row">
-    <div class="col-md-4 ml-auto mr-1" style="left: 5px;"><p class="lead">
-      The aim of this project was to create a method of camera localisation for use at live rugby matches,
-      allowing users to quickly and easily initiate an augmented reality experience. Alongside our pipeline we also developed
-      a proof of concept iOS app to test our localisation on a tabletop pitch model.</p>
-    </div>            
-    <div class="col-lg-4 mr-auto ml-1" style="">
-    <div class="" style="margin-top: 10px;">
-    <img src="TemplateWarped2.jpg" alt="" width="350" height="196"> 
-    </div>
-    </div>
-      <div class="col-lg-8 mx-auto">
-        <p class="lead">
-        <!--The localisation pipeline (written in C++ using OpenCV) is split into multiple steps. First a pitch segmentation step removes the area
-          surrounding the rugby pitch and segments the pitch markings from the surrounding grass. A basic Hough transform line detector is applied to
-          the segmented image and our line clustering step discards outliers and combines detected line segments, idealy resulting in one line per real world pitch marking.
-          A set of correspondences is then found between the detected lines and the corresponding pitch markings on a simple 2D model of the pitch. These correspondences then
-          allow us to calculate the camera pose.-->
-          The localisation pipeline was written in C++ using OpenCV, then integrated into a Unity AR prototype for iOS that uses Vuforia and ARkit to provide
-          basic AR tracking functionality. To initialise our localisation process we task the user with touching a certain pitch marking on their camera feed
-          , from this point we can generate a set of correspondences between each line in the image and the corresponding pitch line on a simple model of the field.
-          This gives use a spatial mapping between the pitch and the image that can be used to estimate the camera pose.
-          
-        </p>
-      </div>
-    </div>
-      
-      
       <div class="col-lg-8 mx-auto" style="left: -10px;top: 5px;">
-    <h4>Untitled Gamedev Project</h4>
-    </div>
-    <div class="row">
-      <div style="" class="col-lg-8 mx-auto">
-        <p class="lead">
-        My current personal project is a tactical role-playing game in the style of popular titles from the 32-bit era. This is currently being
-          developed as a multiplayer only game, to constrain the scope to the development of a functional and flexible turn-based battle system.
-        This game is being developed in Unity, and uses <a href="https://mlapi.network/">MLAPI</a> for networking functionality.
-          
-        </p>
+        <h4>Camera localisation for Augmented Reality at live sports events</h4>
       </div>
-      
-    </div>
-      
-      
-      
-  <div class="row">
-<div style="" class="col-lg-4 ml-auto">
-    <div class="" style="margin-top: 10px;">
-    <img src="tactics6.PNG" alt="" width="350" height="196"> 
-    </div>
-    </div><div style="" class="col-lg-4 mr-auto">
-    <div class="" style="margin-top: 10px;">
-    <img alt="" src="tactics8.PNG" width="350" height="196"> 
-    </div>
-    </div></div>
+      <div class="row">
+        <div class="col-md-4 ml-auto mr-1" style="left: 5px;">
+          <p class="lead">
+            The aim of this project was to create a method of camera localisation for use at live rugby matches,
+            allowing users to quickly and easily initiate an augmented reality experience. Alongside our pipeline we
+            also developed
+            a proof of concept iOS app to test our localisation on a tabletop pitch model.</p>
+        </div>
+        <div class="col-lg-4 mr-auto ml-1" style="">
+          <div class="" style="margin-top: 10px;">
+            <img src="TemplateWarped2.jpg" alt="" width="350" height="196">
+          </div>
+        </div>
+        <div class="col-lg-8 mx-auto">
+          <p class="lead">
+            <!--The localisation pipeline (written in C++ using OpenCV) is split into multiple steps. First a pitch segmentation step removes the area
+            surrounding the rugby pitch and segments the pitch markings from the surrounding grass. A basic Hough transform line detector is applied to
+            the segmented image and our line clustering step discards outliers and combines detected line segments, idealy resulting in one line per real world pitch marking.
+            A set of correspondences is then found between the detected lines and the corresponding pitch markings on a simple 2D model of the pitch. These correspondences then
+            allow us to calculate the camera pose.-->
+            The localisation pipeline was written in C++ using OpenCV, then integrated into a Unity AR prototype for iOS
+            that uses Vuforia and ARkit to provide
+            basic AR tracking functionality. To initialise our localisation process we task the user with touching a
+            certain pitch marking on their camera feed
+            , from this point we can generate a set of correspondences between each line in the image and the
+            corresponding pitch line on a simple model of the field.
+            This gives use a spatial mapping between the pitch and the image that can be used to estimate the camera
+            pose.
 
-</div>
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-8 mx-auto" style="left: -10px;top: 5px;">
+        <h4>Live monitoring for aerial camera systems.</h4>
+      </div>
+      <div class="row">
+        <div style="" class="col-lg-8 mx-auto">
+          <p class="lead">
+            My most recent work has been developing an Electron-based web app for monitoring live video feeds (HD and
+            IR) taken from helicopter mounted camera systems. A
+            live map is used to display the helicopters current position and movement path. When a photograph is taken
+            by the camera operator a marker is placed on the map at the cameras target location.
+            Users can then filter these markers by a variety of criteria (temperature, time, etc) and view any images of
+            interest by selecting the corresponding marker.
+
+          </p>
+        </div>
+      </div>
+
+      <div style="left: -10px;top: 5px;" class="col-md-8 mx-auto">
+        <h4>Indirect Augmented Reality Browser</h4>
+      </div>
+      <div class="row">
+        <div class="col-md-4 ml-auto mr-1" style="left: 5px;">
+          <p class="lead">
+            The Indirect Augmented Reality Browser is a Three.js based application that is designed for
+            navigation and sightseeing. This application combines 360 degree images sourced from street view imaging
+            platform Mapillary with
+            GIS map data sourced from OpenStreetMap.</p>
+        </div>
+        <div style="" class="col-md-4 mr-auto ml-1">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/0WiskPTmUQg"
+              allowfullscreen=""></iframe>
+          </div>
+        </div>
+        <div class="col-md-8 mx-auto">
+          <p class="lead">
+            Building outlines taken from OpenStreetMap are used to create a rough 3D approximation of the surrounding
+            environment.
+            This 3D appoximation is used to align text labels with the faces of the surrounding buildings, accounting
+            for possible occlusion by
+            other buildings and ensuring their is a clear spatial relationship between the label and the corresponding
+            structure.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-8 mx-auto" style="left: -10px;top: 5px;">
+        <h4>Untitled Gamedev Project</h4>
+      </div>
+      <div class="row">
+        <div style="" class="col-lg-8 mx-auto">
+          <p class="lead">
+            My current personal project is a tactical role-playing game in the style of popular titles from the 32-bit
+            era. This is currently being
+            developed as a multiplayer only game, to constrain the scope to the development of a functional and flexible
+            turn-based battle system.
+            This game is being developed in Unity, and uses <a href="https://mlapi.network/">MLAPI</a> for networking
+            functionality.
+
+          </p>
+        </div>
+      </div>
+
+
+
+      <div class="row">
+        <div style="" class="col-lg-4 ml-auto">
+          <div class="" style="margin-top: 10px;">
+            <img src="tactics6.PNG" alt="" width="350" height="196">
+          </div>
+        </div>
+        <div style="" class="col-lg-4 mr-auto">
+          <div class="" style="margin-top: 10px;">
+            <img alt="" src="tactics8.PNG" width="350" height="196">
+          </div>
+        </div>
+      </div>
+
+    </div>
   </section>
-  
-  
+
+
   <section id="publications">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <h2>Publications</h2>
           <p class="lead">
-          P. Skinner and S. Zollmann, "Localisation for Augmented Reality at Sport Events," 2019 International Conference on Image and Vision Computing New Zealand (IVCNZ), Dunedin, New Zealand, 2019 (Poster)
-           </p> <p class="lead">
-          P. Skinner, J. Ventura and S. Zollmann, "Indirect Augmented Reality Browser for GIS Data," 2018 IEEE International Symposium on Mixed and Augmented Reality Adjunct (ISMAR-Adjunct), Munich, Germany, 2018 (Poster)
+            P. Skinner and S. Zollmann, "Localisation for Augmented Reality at Sport Events," 2019 International
+            Conference on Image and Vision Computing New Zealand (IVCNZ), Dunedin, New Zealand, 2019 (Poster)
+          </p>
+          <p class="lead">
+            P. Skinner, J. Ventura and S. Zollmann, "Indirect Augmented Reality Browser for GIS Data," 2018 IEEE
+            International Symposium on Mixed and Augmented Reality Adjunct (ISMAR-Adjunct), Munich, Germany, 2018
+            (Poster)
           </p>
         </div>
       </div>
@@ -208,7 +259,8 @@
         <div class="col-lg-8 mx-auto">
           <h2>Contact Me</h2>
           <p class="lead">The best way to contact me directly is at patrickskinner@outlook.com.<br>
-            Further examples of my work can be found on my <a href="https://github.com/PatrickSkinner">Github profile</a>.
+            Further examples of my work can be found on my <a href="https://github.com/PatrickSkinner">Github
+              profile</a>.
 
 
           </p>
@@ -238,111 +290,113 @@
   <script src="js/three.js"></script>
 
   <script>
+    var canvas = document.getElementById("theCanvas");
+    var parent = document.getElementById("parent");
+    canvas.width = parent.offsetWidth;
+    canvas.height = parent.offsetHeight;
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(25, canvas.width / canvas.height, 0.1, 1000);
+
+    const renderer = new THREE.WebGLRenderer({ canvas });
+    renderer.setClearColor(0x007bff, 1);
+    camera.position.z = 5;
+
+    const opacity = 0.2;
+
+    const star1 = drawStar(30, 0, -50);
+    const star2 = drawStar(-80, -15, -100);
+    const star3 = drawStar(-40, 20, -150);
+
+    function drawStar(x, y, z) {
+      const pivot = new THREE.Group();
+
+      pivot.position.set(x, y, z);
+
+      for (var i = 0; i < 8; i++) {
+        const geometry = new THREE.CylinderGeometry(5, 5, 25, 6);
+        const wireframe = new THREE.EdgesGeometry(geometry);
+        const lineMaterial = new THREE.LineBasicMaterial({ color: 0xffffff });
+        lineMaterial.transparent = true;
+        lineMaterial.opacity = opacity;
+        const line = new THREE.LineSegments(wireframe, lineMaterial);
+        const obj = new THREE.Object3D();
+        obj.add(line);
+        obj.rotation.set(0, 0, (i + 2) * (Math.PI / 4));
+
+        const theta = i * (Math.PI / 4);
+        const dist = 25;
+        obj.position.set(dist * Math.cos(theta), dist * Math.sin(theta), 0);
+
+        pivot.add(obj);
+      }
+
+      scene.add(pivot);
+
+      return pivot;
+    }
+
+    function resizeRendererToDisplaySize(renderer) {
+      const canvasDom = renderer.domElement;
+      const width = canvasDom.clientWidth;
+      const height = canvasDom.clientHeight;
+
+      var canvas = document.getElementById("theCanvas");
+      var parent = document.getElementById("parent");
+      canvas.width = parent.offsetWidth;
+      canvas.height = parent.offsetHeight;
+
+      const needResize = canvas.width !== width || canvas.height !== height;
+      if (needResize) {
+        renderer.setSize(width, height, false);
+      }
+      return needResize;
+    }
+
+    function render(time) {
+      time *= 0.001;
+
+      if (resizeRendererToDisplaySize(renderer)) {
         var canvas = document.getElementById("theCanvas");
         var parent = document.getElementById("parent");
         canvas.width = parent.offsetWidth;
         canvas.height = parent.offsetHeight;
 
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera( 25, canvas.width / canvas.height, 0.1, 1000 );
+        renderer.setSize(parent.offsetWidth, parent.offsetHeight, false);
+        camera.aspect = parent.offsetWidth / parent.offsetHeight;
+        camera.updateProjectionMatrix();
+        //console.log("Updating Camera to " +  parent.offsetWidth + " / " + parent.offsetHeight);
+      }
 
-        const renderer = new THREE.WebGLRenderer({canvas});
-        renderer.setClearColor( 0x007bff, 1);
-        camera.position.z = 5;
+      star1.rotation.z += 0.003;
+      star1.rotation.x += 0.001;
+      star1.children.forEach(function (pChild) {
+        pChild.rotateY(0.003);
+      });
 
-        const opacity = 0.2;
+      star2.rotation.z += 0.003;
+      star2.rotation.x -= 0.002;
+      star2.children.forEach(function (pChild) {
+        pChild.rotateY(0.003);
+      });
 
-        const star1 = drawStar(30,0,-50);
-        const star2 = drawStar(-80, -15, -100);
-        const star3 = drawStar(-40, 20, -150);
-
-        function drawStar(x, y, z){
-          const pivot = new THREE.Group();
-
-          pivot.position.set(x, y, z);
-
-          for(var i = 0; i < 8; i++){
-            const geometry = new THREE.CylinderGeometry( 5, 5, 25, 6);
-            const wireframe = new THREE.EdgesGeometry(geometry);
-            const lineMaterial = new THREE.LineBasicMaterial( { color: 0xffffff } );
-            lineMaterial.transparent = true;
-            lineMaterial.opacity = opacity;
-            const line = new THREE.LineSegments( wireframe, lineMaterial );
-            const obj = new THREE.Object3D();
-            obj.add(line);
-            obj.rotation.set(0,0, (i+2)*(Math.PI/4));
-
-            const theta = i*(Math.PI/4);
-            const dist = 25;
-            obj.position.set(dist*Math.cos(theta), dist*Math.sin(theta),0);
-
-            pivot.add(obj);
-          }
-
-          scene.add(pivot);
-
-          return pivot;
-        }
-
-        function resizeRendererToDisplaySize(renderer) {
-          const canvasDom = renderer.domElement;
-          const width = canvasDom.clientWidth;
-          const height = canvasDom.clientHeight;
-
-          var canvas = document.getElementById("theCanvas");
-          var parent = document.getElementById("parent");
-          canvas.width = parent.offsetWidth;
-          canvas.height = parent.offsetHeight;
-          
-          const needResize = canvas.width !== width || canvas.height !== height;
-          if (needResize) {
-            renderer.setSize(width, height, false);
-          }
-          return needResize;
-        } 
-
-        function render(time) {
-          time *= 0.001;
-
-          if (resizeRendererToDisplaySize(renderer)) {
-            var canvas = document.getElementById("theCanvas");
-            var parent = document.getElementById("parent");
-            canvas.width = parent.offsetWidth;
-            canvas.height = parent.offsetHeight;
-
-            renderer.setSize(parent.offsetWidth, parent.offsetHeight, false);
-            camera.aspect = parent.offsetWidth / parent.offsetHeight;
-            camera.updateProjectionMatrix();
-            //console.log("Updating Camera to " +  parent.offsetWidth + " / " + parent.offsetHeight);
-          }
-
-          star1.rotation.z += 0.003;
-          star1.rotation.x += 0.001;
-          star1.children.forEach(function(pChild) {
-            pChild.rotateY(0.003);
-          });
-
-          star2.rotation.z += 0.003;
-          star2.rotation.x -= 0.002;
-          star2.children.forEach(function(pChild) {
-            pChild.rotateY(0.003);
-          });
-
-          star3.rotation.z -= 0.003;
-          star3.rotation.x += 0.002;
-          star3.children.forEach(function(pChild) {
-            pChild.rotateY(0.003);
-          });
+      star3.rotation.z -= 0.003;
+      star3.rotation.x += 0.002;
+      star3.children.forEach(function (pChild) {
+        pChild.rotateY(0.003);
+      });
 
 
-          requestAnimationFrame( render );
-          renderer.render( scene, camera );
-        }
+      requestAnimationFrame(render);
+      renderer.render(scene, camera);
+    }
 
-        requestAnimationFrame( render );
-    </script>
+    requestAnimationFrame(render);
+  </script>
 
 
 
 
-</body></html>
+</body>
+
+</html>
