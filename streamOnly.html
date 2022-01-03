@@ -25,10 +25,10 @@
 
 <body>
 
-  <div id="topvid" style="width: 100%;  height: 50%; position: fixed; right: 0;">
+  <div id="topvid" style="width: 100%;  height: 100%; position: fixed; right: 0;">
     <video id="my-video" class="video-js" controls preload="auto" data-setup="{}" fill="true">
       <script language="JavaScript">
-        document.write('<source src="' + 'http://118.92.79.199:80/LiveApp/streams/testkey.m3u8" type="application/x-mpegurl" />' );
+        document.write('<source src="' + 'https://highland.patrickskinner.me:80/LiveApp/streams/testkey.m3u8" type="application/x-mpegurl" />' );
       </script>   
       <p class="vjs-no-js">
         To view this video please enable JavaScript, and consider upgrading to a
@@ -38,9 +38,9 @@
     </video>
   </div>
 
+  <!--
   <div id="botvid" style="width: 100%;  height: 50%; position: fixed; bottom: 0; right: 0;">
     <video id="my-video" class="video-js" controls preload="auto" data-setup="{}" fill="true">
-      <!-- <source src="test.mp4" type="video/mp4" /> -->
       <script language="JavaScript">
         document.write('<source src="' + 'http://118.92.79.199:80/LiveApp/streams/testkeytwo.m3u8" type="application/x-mpegurl" />' );
       </script>
@@ -52,6 +52,7 @@
       </p>
     </video>
   </div>
+  -->  
 
   <!-- You can also require other files to run in this process -->
   <script src="./renderer.js"></script>
